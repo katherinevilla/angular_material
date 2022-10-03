@@ -5,6 +5,19 @@
    [opened]="!isSmallScreen"
    [fixedInViewport]="true"
    [mode]="sidenavMode">
+   <mat-toolbar color="primary">
+   Smart Examples
+  </mat-toolbar>
+  <mat-nav-list>
+    <a mat-list-item routerLink="/formFieldInput">Form field Input</a>
+    <a mat-list-item routerLink="/progBarSpinner">Progress bar and Spinner</a>
+    <a mat-list-item routerLink="/tabs">Tabs</a>
+    <a mat-list-item routerLink="/datepicker">Datepicker</a>
+    <a mat-list-item routerLink="/snackbar"> Snackbar</a>
+    <a mat-list-item routerLink="/dialog"> Dialog</a>
+    <a mat-list-item routerLink="/datatable">Datatable</a>
+
+  </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content >
     <mat-toolbar
@@ -29,11 +42,14 @@
     </mat-toolbar>
     <mat-toolbar class="toolbar-submenu"  color="primary">
     <span *ngIf="!popText">My App</span>
+    <button mat-raised-button class="mat-button-product" (click)="openDialog()" color="warn">Add Product</button>
   </mat-toolbar>
-  <app-formfield-input></app-formfield-input>
+  <div class="content">
+  <router-outlet></router-outlet>
+</div >
 
   </mat-sidenav-content>
 </mat-sidenav-container>
 
 
-<router-outlet></router-outlet>
+
